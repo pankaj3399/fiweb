@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import Header from '../../components/Header';
 import { makeStyles } from '@material-ui/core/styles';
 import Home from '../../images/Home.jpg';
-import { Typography } from '@material-ui/core';
+import { Divider, Typography } from '@material-ui/core';
 import Footer from '../../components/Footer';
 
 const useStyles = makeStyles((theme) => ({
@@ -11,21 +11,32 @@ const useStyles = makeStyles((theme) => ({
 		backgroundPosition: 'center',
 		backgroundSize: 'cover',
 		backgroundRepeat: 'no-repeat',
-		height: '100vh',
+		height: '90vh',
 		flexGrow: 1,
 		display: 'flex',
-		alignItems: 'center',
+		//alignItems: 'center'
 		justifyContent: 'center'
 		//justifyContent: 'flex-end'
 	},
 	displayFlex: {
-		display: 'flex'
+		display: 'flex',
+		paddingTop: '16px',
+		paddingBottom: '16px'
 	},
 	fontStyle: {
 		color: 'white',
-		fontSize: '30px',
-		marginBottom: '48px'
-		// marginRight: '150px'
+		fontSize: '44px',
+		paddingLeft: '500px'
+	},
+	spanF: {
+		paddingBottom: '8px',
+		borderBottomStyle: 'solid'
+	},
+	divider: {
+		width: '60%',
+		height: '3px',
+		marginLeft: 'auto',
+		marginRight: 'auto'
 	}
 }));
 
@@ -37,12 +48,14 @@ function HomePage(props) {
 			<div className={classes.displayFlex}>
 				<div className={classes.imageDiv}>
 					<Typography className={classes.fontStyle}>
-						If you are a Service Provider,<br /> Businesses expect GST-compliant invoices.<br /> Free
-						invoicing for life.
+						If you are a <br /> Service Provider,<br /> Businesses expect <br /> GST-compliant invoices.<br />{' '}
+						<span className={classes.spanF}>Free Invoicing. For Life.</span>
 					</Typography>
 				</div>
 			</div>
-			<Footer />
+			<Divider className={classes.divider} />
+			<div>hello</div>
+			{/* <Footer /> */}
 		</Fragment>
 	);
 }
