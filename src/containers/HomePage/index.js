@@ -3,7 +3,8 @@ import Header from '../../components/Header';
 import { makeStyles } from '@material-ui/core/styles';
 import Home from '../../images/Home.jpg';
 import { Divider, Typography } from '@material-ui/core';
-import Footer from '../../components/Footer';
+import InvoicesOnGo from '../../components/InvoicesOnGo';
+// import Footer from '../../components/Footer';
 
 const useStyles = makeStyles((theme) => ({
 	imageDiv: {
@@ -14,14 +15,12 @@ const useStyles = makeStyles((theme) => ({
 		height: '90vh',
 		flexGrow: 1,
 		display: 'flex',
-		//alignItems: 'center'
 		justifyContent: 'center'
-		//justifyContent: 'flex-end'
 	},
 	displayFlex: {
 		display: 'flex',
 		paddingTop: '16px',
-		paddingBottom: '16px'
+		paddingBottom: '32px'
 	},
 	fontStyle: {
 		color: 'white',
@@ -37,6 +36,17 @@ const useStyles = makeStyles((theme) => ({
 		height: '3px',
 		marginLeft: 'auto',
 		marginRight: 'auto'
+	},
+	invoiceText: {
+		paddingTop: '40px',
+		textTransform: 'uppercase',
+		fontSize: '28px',
+		fontWeight: 'bold'
+	},
+	headingDiv: {
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center'
 	}
 }));
 
@@ -54,7 +64,10 @@ function HomePage(props) {
 				</div>
 			</div>
 			<Divider className={classes.divider} />
-			<div>hello</div>
+			<div className={classes.headingDiv}>
+				<Typography className={classes.invoiceText}> Produce Invoices on the Go </Typography>
+			</div>
+			<InvoicesOnGo />
 			{/* <Footer /> */}
 		</Fragment>
 	);
